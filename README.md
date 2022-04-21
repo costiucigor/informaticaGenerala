@@ -10,3 +10,10 @@ Pentru a deschide o conexiune web socket, trebuie să creăm un nou obiect WebSo
 specificând protocolul special ws în url:
 
 let socket = new WebSocket("exemplu");
+
+Există și protocolul wss://, care folosește criptarea. Este ca HTTPS pentru socket-urile web.
+
+preferă întotdeauna wss://
+Protocolul wss:// nu numai că folosește criptarea, dar are și securitate sporită.
+
+Acest lucru se datorează faptului că datele ws:// nu sunt criptate, vizibile pentru orice intermediar. Proxy-urile mai vechi nu știu despre WebSocket, ar putea vedea anteturi „ciudate” și închid conexiunea.
